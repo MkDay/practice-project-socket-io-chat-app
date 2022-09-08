@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/style.css" type="text/css">
+
+    <title>Real-Time Chat Room</title>
+</head>
+<body>
+    
+    <div class="wrapper chat-wrapper">
+        <div class="header chat-header">
+            <h1><i class="fa-solid fa-face-smile"></i> ChatCord</h1>
+            <a id="leave-btn" href="/index.html">Leave Room</a>
+        </div>
+
+        <div class="inbox-container">
+
+            <div class="inbox-sidebar">
+                <label class="sidebar-label"><i class="fa-sharp fa-solid fa-comments"></i> Room Name:</label>
+                <p id="room-name"></p>
+
+                <label class="sidebar-label"><i class="fa-sharp fa-solid fa-users"></i> Users:</label>
+                <ul id="users"></ul>
+            </div>
+            <div class="inbox"></div>
+        </div>
+
+        <div class="chat-message-container">
+            <form id="chat-form">
+                <input type="text" id="chat-message" placeholder="Enter your message">
+                <button type="submit" id="send-btn">SEND <i class="fa-regular fa-paper-plane"></i></button>
+            </form>
+            
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.min.js" integrity="sha512-/l6vieC+YxaZywUhmqs++8uF9DeMvJE61ua5g+UK0TuHZ4TkTgB1Gm1n0NiA86uEOM9JJ6JUwyR0hboKO0fCng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/main.js"></script>
+</body>
+</html>

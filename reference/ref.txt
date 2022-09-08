@@ -1,0 +1,68 @@
+checklist:
+    * tweak the style a bit
+    * fix scroll problem
+
+> create,
+	* index.html
+	* chat.html
+	* style.css
+	* main.js (empty for now)
+> put them all into a public folder.
+> run npm init (create package.json)
+> install express, socket.io, moment
+
+> create app.js
+> in there, require express and create the express app server and listen to requests at the port 3000
+> create static middleware
+
+> here we need regular node http server as well to work with web sockets.
+> so require http
+> create http server and pass express app into it.
+	server = http.createServer(app) 
+
+> require socket.io create a web socket
+	socketio = require('socket.io')
+	io = socketio(server)
+
+> now create a connection 
+	io.on('connection', (socket) => {
+	  console.log('new web socket connection...')
+	});
+
+> go to chat.html
+> add this script tag before the main.js script.
+	
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/main.js"></script>
+> go to main.js file and invoke io(), it comes from socket.io.js file
+	const socket = io();
+> now if an user comes into the chat app the console will show the message.
+
+	
+> show a message in the front-end
+	* create socket.emit() at app.js and add the message
+		
+		io.on('connection', (socket) => {
+	  		console.log('new web socket connection...')
+
+			socket.emit('message', 'Welcome to ChatCord')
+		});
+
+	* go to main.js
+	* now the message that has created at server-side will be shown at the web console. 
+		socket.on('message', message => {
+			console.log(message)
+		})
+
+> getting user typed messages into web console
+	* go to main.js
+		const chatForm = document.querySelector('#chat-form');
+
+	* add a listener to listen to the submit event
+		chatForm.addEventListener('submit', (e) => {
+    		e.preventDefault();
+
+    		const msg = document.querySelector('#chat-message').value;
+    		console.log(msg);
+		}) 
+	* now we can get the user typed message into the web console.

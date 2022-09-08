@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <title>Real-Time Chat Room App</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="header">
+            <h1><i class="fa-solid fa-face-smile"></i> ChatCord</h1>
+        </div>
+        <div id="entry-form-container">
+            <form action="chat.html" id="entry-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+                <label for="room">Room:</label>
+
+                <select name="room" id="room" required> 
+                    <option value="">Select the room...</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="PHP">PHP</option>
+                    <option value="NodeJS">Node JS</option>
+                    <option value="React">React</option>
+                </select>
+                <button id="join-btn">Join Chat</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
